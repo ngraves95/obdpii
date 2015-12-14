@@ -1,0 +1,55 @@
+* {
+    padding: 0;
+    border: 0;
+    margin: 0;
+    font-family: Calibri, sans-serif;
+}
+
+#content {
+    /* Empty selector for use with show/hide content */
+}
+
+#content-inner {
+    float: left;
+    width: 200%;
+    margin-left: 2vw;
+    margin-bottom: 6vh;
+    margin-top: 6vh;
+}
+
+.component {
+    position: relative;
+    text-overflow: "m";
+    box-sizing: border-box;
+    box-shadow: 2px 2px 2px #888888;
+    border: 2px solid #444444;
+    width: 17vw;
+    height: 60vh;
+    margin-right: 2vw;
+    float: left;
+    background-color: white;
+    list-style-type: none;
+}
+
+.component:last-child {
+    margin-right: 0px;
+}
+
+.component-title {
+    padding-top: 2vh;
+    overflow: hidden;
+    color: #444444;
+    font-size: 8vh;
+    text-align: center;
+    border-bottom: 2px solid #444444;
+    margin-bottom: 1vh;
+    min-height: 15vh;
+}
+
+.component-content {
+    overflow: hidden;
+    color: #444444;
+    padding-top: 2vh;
+    font-size: 10vh;
+    text-align: center;
+}
