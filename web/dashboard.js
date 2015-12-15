@@ -1,27 +1,30 @@
+function generateCard(name, value, units) {
+    return '<li class="component">'
+	+ '<div class="component-title">' + name + '</div>'
+	+ '<div class="component-content">'
+	+ value + '<br>'+ units+ '</div>'+ '</li>';
+}
+
+
 function update() {
     var ajax = new XMLHttpRequest();
     ajax.onreadystatechange = function () {
-	if (ajax.readyState == 4 && ajax.status == 200) {
-
-	    // Handle error; probably shouldn't happen for this app.
-	    console.log("callback running...");
-	    console.log(ajax.responseText);
-
-	    var jsonResponse =JSON.parse(ajax.responseText);
-	    var components = "<ul>";
-	    for (var key in jsonResponse) {
-		components +=
-		'<li class="component">'
-		    + '<div class="component-title">' + key + '</div>'
-		    + '<div class="component-content">'
-		    + jsonResponse[key].pid_value
-		    + '<br>'
-		    + jsonResponse[key].pid_units
-		    + '</div>'
-		    + '</li>';
+	if (ajax.readyState == 4) {
+	    if (ajax.status == 200) {
+		// Handle error; probably shouldn't happen for this app.
+		console.log("callback running...");
+		console.log(ajax.responseText);
+		var jsonResponse =JSON.parse(ajax.responseText);
+		var components = "<ul>";
+		for (var key in jsonResponse) {
+		    components += generateCard(key,
+					       jsonResponse[key].pid_value,
+					       jsonResponse[key].pid_units);
+		}
+		components += "</ul>";
+		document.getElementById("content-inner").innerHTML = components;
 	    }
-	    components += '</ul>';
-	    document.getElementById("content-inner").innerHTML = components;
+	    setTimeout(function() { update(); }, 1000);
 	}
     }
 
