@@ -77,7 +77,7 @@ function update() {
 		components += "";
 		document.getElementById("content-list").innerHTML = components;
 	    }
-	    setTimeout(function() { update(); }, 50000);
+	    setTimeout(function() { update(); }, 1000);
 	}
     }
 
