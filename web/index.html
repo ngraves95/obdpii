@@ -6,10 +6,19 @@
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
     <script src="./dashboard.js"></script>
   </head>
-  <body onload="update()">
+  <body onload="update()" ontouchstart="">
+    <div class="add-button" onclick="togglePidSelector()">+</div>
+    <select id="pidsel" class="pid-selector" name="pids"
+	      onchange="registerPid(this)">
+	<option value=""> -- Please select a PID -- </option>
+	<option value="x">New</option>
+	<option value="y">Newer</option>
+    </select>
     <div id="content">
       <div id="content-inner">
+	<ul id="content-list"></ul>
       </div>
+
     </div>
   </body>
 </html>

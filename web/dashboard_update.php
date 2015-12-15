@@ -7,6 +7,7 @@ if ($db->connect_errno) {
     exit();
 }
 
+// How to get target pids? Maybe send via json?
 $target_pids = array(17, 12, 13, 15); // 0x17 is Throttle Position.
 
 // Get names and units from pid_metadata table.
