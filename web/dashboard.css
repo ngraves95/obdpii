@@ -93,7 +93,7 @@ body {
 
 .pid-selector {
     display: none;
-    z-index: 20;
+    z-index: 9;
     -webkit-appearance: menulist-button;
     height: 60vh;
     position: fixed;
@@ -108,4 +108,12 @@ body {
     width: 50vw;
     background-color: #ffffff;
     list-style-type: none;
+}
+
+.pid-sel-name {
+    display: block;
+}
+
+.pid-sel-unit {
+    display: none;
 }

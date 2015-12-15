@@ -9,10 +9,10 @@
   <body onload="update()" ontouchstart="">
     <div class="add-button" onclick="togglePidSelector()">+</div>
     <select id="pidsel" class="pid-selector" name="pids"
-	      onchange="registerPid(this)">
-	<option value=""> -- Please select a PID -- </option>
-	<option value="x">New</option>
-	<option value="y">Newer</option>
+	      onchange="registerPid()" >
+	<option value="" > -- Please select a PID -- </option>
+	<option value="x" label="New">rpm</option>
+	<option value="y" label="Newer">psi</option>
     </select>
     <div id="content">
       <div id="content-inner">

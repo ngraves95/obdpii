@@ -30,12 +30,13 @@ function resetPidSelector(sel) {
     sel.selectedIndex = 0;
 }
 
-function registerPid(sel) {
+function registerPid() {
+    var sel = document.getElementById("pidsel");
     var pid = (sel.options[sel.selectedIndex].value);
 
-    if (pid === null || pid == "") {
+    if (pid === null || pid == "" || sel.selectedIndex <= 0) {
 	resetPidSelector(sel);
-	togglePidSelector();
+	hide('pidsel');
 	return;
     }
 
@@ -47,15 +48,15 @@ function registerPid(sel) {
 	hide(sel.options[sel.selectedIndex].text);
 	target_pids.splice(index, 1);
 	resetPidSelector(sel);
-	togglePidSelector();
+	hide('pidsel');
 	return;
     }
-
     // How to get units?
-    var newCard = generateCard(sel.options[sel.selectedIndex].text, "", "");
+    var newCard = generateCard(sel.options[sel.selectedIndex].text, "&nbsp;",
+			       sel.options[sel.selectedIndex].innerHTML);
     document.getElementById("content-list").innerHTML += newCard;
     resetPidSelector(sel);
-    togglePidSelector();
+    hide('pidsel');
 }
 
 function update() {
