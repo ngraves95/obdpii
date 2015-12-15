@@ -81,7 +81,17 @@ function update() {
 	}
     }
 
-    ajax.open("GET", "/dashboard_update.php");
+
+    var urlParams = "";
+    if (target_pids.length > 0) {
+	var param = "pid[]=";
+	urlParams = "?" + param + target_pids.join("&" + param);
+    }
+
+    console.log(urlParams);
+    var fullUrl =  "/dashboard_update.php" + urlParams;
+    console.log(fullUrl);
+    ajax.open("GET", fullUrl);
     ajax.setRequestHeader("Content-type","application/text");
     ajax.send();
 }

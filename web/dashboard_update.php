@@ -8,7 +8,12 @@ if ($db->connect_errno) {
 }
 
 // How to get target pids? Maybe send via json?
-$target_pids = array(17, 12, 13, 15); // 0x17 is Throttle Position.
+//$target_pids = array(17, 12, 13, 15); // 0x17 is Throttle Position.
+$target_pids = array();
+
+if(isset($_GET["pid"]) && !empty($_GET["pid"])) {
+    $target_pids = $_GET["pid"];
+}
 
 // Get names and units from pid_metadata table.
 $where_clause = join(",", $target_pids);
@@ -34,6 +39,7 @@ while ($metadata_row = $metadata_result->fetch_assoc()) {
     );
 }
 
+$db->close();
 echo json_encode($output);
 
 ?>
