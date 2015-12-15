@@ -28,7 +28,7 @@ while ($pid_row = $pid_result->fetch_assoc()) {
   <body onload="update()" ontouchstart="">
     <div class="add-button" onclick="togglePidSelector()">+</div>
     <select id="pidsel" class="pid-selector" name="pids"
-	      onchange="registerPid()" >
+	      onchange="registerPid()" onclick="this.selectedIndex=0;" >
                 <option value=""> -- Please select a PID -- </option>
     <?php echo $output ?>
     </select>
