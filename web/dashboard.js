@@ -1,3 +1,11 @@
+function generateCard(name, value, units) {
+    return '<li class="component">'
+	+ '<div class="component-title">' + name + '</div>'
+	+ '<div class="component-content">'
+	+ value + '<br>'+ units+ '</div>'+ '</li>';
+}
+
+
 function update() {
     var ajax = new XMLHttpRequest();
     ajax.onreadystatechange = function () {
@@ -9,17 +17,11 @@ function update() {
 		var jsonResponse =JSON.parse(ajax.responseText);
 		var components = "<ul>";
 		for (var key in jsonResponse) {
-		    components +=
-		    '<li class="component">'
-			+ '<div class="component-title">' + key + '</div>'
-			+ '<div class="component-content">'
-			+ jsonResponse[key].pid_value
-			+ '<br>'
-			+ jsonResponse[key].pid_units
-			+ '</div>'
-			+ '</li>';
+		    components += generateCard(key,
+					       jsonResponse[key].pid_value,
+					       jsonResponse[key].pid_units);
 		}
-		components += '</ul>';
+		components += "</ul>";
 		document.getElementById("content-inner").innerHTML = components;
 	    }
 	    setTimeout(function() { update(); }, 1000);
