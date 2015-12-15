@@ -8,6 +8,10 @@ $ja = array(
     "Some PID 2" => array(
         "pid_value" => 72.2,
         "pid_units" => "%"
+    ),
+    "Time" => array(
+        "pid_value" => date('i:s'),
+        "pid_units" => "time"
     )
 );
 
