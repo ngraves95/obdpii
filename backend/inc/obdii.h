@@ -9,7 +9,12 @@ typedef enum {
 struct pid_entry {
 	char pid;
 	char response_len;
-	char * msg;
+	char * msg; /* <REMOVE ME> */
+};
+
+struct pid_response {
+	char pid;
+	int value;
 };
 
 #define N_PID 0x80
@@ -19,10 +24,6 @@ struct pid_entry {
  */
 extern const struct pid_entry pid_data[N_PID];
 
-/*
- * Use to designate out-parameters.
- */
-#define OUT
-
+#define OBDII_DEVICE "path/to/device"
 
 #endif

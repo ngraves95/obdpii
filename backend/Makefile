@@ -1,4 +1,3 @@
-
 CC=gcc
 CFLAGS=-I$(IDIR) -Wall -Werror
 
@@ -27,7 +26,7 @@ run : $(MAIN)
 	./$(MAIN)
 
 clean:
-	rm -f $(ODIR)/*.o *~ core $(INCDIR)/*~
+	rm -f $(ODIR)/*.o *~ core $(IDIR)/*~ $(SRCDIR)/*~
 
 echo-src:
 	@echo $(SRCS)

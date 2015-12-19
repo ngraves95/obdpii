@@ -1,0 +1,43 @@
+
+src/main.c,15
+int main(7,86
+
+src/obdii.c,47
+const struct pid_entry pid_data[pid_data3,20
+
+src/obdii_simple.c,214
+obdii_result_t obdii_request(15,244
+obdii_result_t obdii_read(26,450
+obdii_result_t obdii_parse(47,900
+char * obdii_encode(81,1537
+obdii_result_t obdii_return(113,2132
+void obdii_simple_get_response(119,2230
+
+inc/obdii.h,289
+#define OBDII_H2,16
+	OBDII_FAILURE,5,48
+	OBDII_SUCCESS6,64
+} obdii_result_t;7,79
+struct pid_entry 9,98
+	char pid;10,117
+	char response_len;11,128
+	char * msg;12,148
+struct pid_response 15,183
+	char pid;16,205
+	int value;17,216
+#define N_PID 20,232
+#define OBDII_DEVICE 27,359
+
+inc/obdii_consumer.h,30
+#define OBDII_CONSUMER_H2,25
+
+inc/obdii_simple.h,28
+#define OBDII_SIMPLE_H2,23
+
+inc/obdii_reader.h,28
+#define OBDII_READER_H2,23
+
+inc/obdii_producer.h,30
+#define OBDII_PRODUCER_H2,25
+
+src/obdii_reader.c,0
