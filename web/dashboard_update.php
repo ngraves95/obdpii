@@ -16,18 +16,14 @@ if(isset($_GET["pid"]) && !empty($_GET["pid"])) {
     exit();
 }
 
-//ERROR
-
 // Validate pids. If any are not numeric, remove them.
-// for ($i = 0; $i < count($target_pids); i++) {
-//     if (!is_numeric($target_pids[i])) {
-//         unset($target_pids[i]);
-//     }
-// }
+for ($i = 0; $i < count($target_pids); $i++) {
+    if (!is_numeric($target_pids[$i])) {
+        unset($target_pids[$i]);
+    }
+}
 
-//$target_pids = array_values($target_pids);
-
-// END ERROR
+$target_pids = array_values($target_pids);
 
 // Get PID data from OBD-II. Data is passed via stdout.
 $obdii_pid_param_string = join(" ", $target_pids);
