@@ -22,6 +22,11 @@ $(MAIN): $(OBJ)
 
 .PHONY: clean echo-src echo-obj run
 
+debug: $(MAIN)
+
+debug: CFLAGS += -DDEBUG=0
+
+
 run : $(MAIN)
 	./$(MAIN)
 
