@@ -24,6 +24,11 @@ struct pid_response {
  */
 extern const struct pid_entry pid_data[N_PID];
 
-#define OBDII_DEVICE "path/to/device"
+/*
+ * Only 1 OBD-II device may be open at a time,
+ * as a car only has 1 OBD-II port.
+ */
+obdii_result_t obdii_open(char * location);
+obdii_result_t obdii_close(void);
 
 #endif

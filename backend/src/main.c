@@ -19,5 +19,6 @@ int main(int argc, char ** argv)
 	}
 
 	obdii_simple_get_response(pids, argc - 1);
+	obdii_close();
 	return 0;
 }
