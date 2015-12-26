@@ -28,7 +28,11 @@ $target_pids = array_values($target_pids);
 // Get PID data from OBD-II. Data is passed via stdout.
 $obdii_pid_param_string = join(" ", $target_pids);
 $obdii_reader = "./main";
-$obdii_raw = json_decode(utf8_encode(exec($obdii_reader." ".$obdii_pid_param_string)));
+$obdii_read_command = $obdii_reader." ".$obdii_pid_param_string;
+// Get response
+$obdii_raw_response = exec($obdii_read_command);
+// Decode response
+$obdii_raw = json_decode(utf8_encode($obdii_raw_response));
 
 $obdii_data = array();
 foreach ($obdii_raw as $key => $value) {
