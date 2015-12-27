@@ -25,6 +25,14 @@ struct pid_response {
 extern const struct pid_entry pid_data[N_PID];
 
 /*
+ * Contains all the formulas used to scale and format the
+ * raw results from a request into a meaningful value.
+ * The function at slot N corresponds to pid N.
+ */
+typedef int (*pid_handler)(int);
+extern const pid_handler pid_formulas[N_PID];
+
+/*
  * Only 1 OBD-II device may be open at a time,
  * as a car only has 1 OBD-II port.
  */
