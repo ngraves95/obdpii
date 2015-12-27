@@ -263,7 +263,7 @@ obdii_result_t obdii_parse(struct pid_response * out, int * n_out,
 	}
 
 	out->pid = (char) (strtol(pid_buf, NULL, 16) & 0xFF);
-	out->value = accum;
+	out->value = pid_formulas[(int)out->pid](accum);
 
 	return OBDII_SUCCESS;
 }
