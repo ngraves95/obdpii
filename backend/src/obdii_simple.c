@@ -250,6 +250,7 @@ obdii_result_t obdii_parse(struct pid_response * out, int * n_out,
 	 */
 	char pid_buf[] = {src[2], src[3], '\0'}; /* Get PID from echo */
 	int accum = 0;
+	int i = 0;
 
 	char * tok = strtok(src, " ");
 	tok = strtok(NULL, " "); /* Pass over first 2 tokens. */
@@ -257,8 +258,8 @@ obdii_result_t obdii_parse(struct pid_response * out, int * n_out,
 	/* Convert payload from string to int */
 	while (tok && is_number_start(tok[0])) {
 		DEBUG_DETAIL("Token parsed:", tok);
-		accum = accum << 8;
-		accum |= (int) (strtol(tok, NULL, 16) & 0xFF);
+		accum |= (int) (strtol(tok, NULL, 16) & 0xFF) << (8 * i);
+		i++;
 		tok = strtok(NULL, " ");
 	}
 

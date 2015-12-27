@@ -1,11 +1,5 @@
 #include "obdii.h"
 
-/*
- * This code is mostly auto-generated and thus it is terrible.
- * I hope nobody else ever has to read this code, as it will cause
- * sadness and despair.
- */
-
 static int pid00_handler(int packed)
 {
 	return packed;
@@ -24,74 +18,74 @@ static int pid03_handler(int packed)
 }
 static int pid04_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
 	return (A*100/255);
 }
 static int pid05_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
 	return (A-40);
 }
 static int pid06_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
 	return ((A-128) * 100/128);
 }
 static int pid07_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
 	return ((A-128) * 100/128);
 }
 static int pid08_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
 	return ((A-128) * 100/128);
 }
 static int pid09_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
 	return ((A-128) * 100/128);
 }
 static int pid0A_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
 	return (A*3);
 }
 static int pid0B_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
 	return (A);
 }
 static int pid0C_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
-	int B = (packed >> (8 * 2)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
+	int B = (packed >> (8 * 1)) & 0xFF;
 	return (((A*256)+B)/4);
 }
 static int pid0D_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
 	return (A);
 }
 static int pid0E_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
 	return ((A-128)/2);
 }
 static int pid0F_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
 	return (A-40);
 }
 static int pid10_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
-	int B = (packed >> (8 * 2)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
+	int B = (packed >> (8 * 1)) & 0xFF;
 	return (((A*256)+B) / 100);
 }
 static int pid11_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
 	return (A*100/255);
 }
 static int pid12_handler(int packed)
@@ -104,50 +98,50 @@ static int pid13_handler(int packed)
 }
 static int pid14_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
-	int B = (packed >> (8 * 2)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
+	int B = (packed >> (8 * 1)) & 0xFF;
 	return (A/200) / ((B-128) * 100/128);
 }
 static int pid15_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
-	int B = (packed >> (8 * 2)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
+	int B = (packed >> (8 * 1)) & 0xFF;
 	return (A/200) / ((B-128) * 100/128);
 }
 static int pid16_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
-	int B = (packed >> (8 * 2)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
+	int B = (packed >> (8 * 1)) & 0xFF;
 	return (A/200) / ((B-128) * 100/128);
 }
 static int pid17_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
-	int B = (packed >> (8 * 2)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
+	int B = (packed >> (8 * 1)) & 0xFF;
 	return (A/200) / ((B-128) * 100/128);
 }
 static int pid18_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
-	int B = (packed >> (8 * 2)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
+	int B = (packed >> (8 * 1)) & 0xFF;
 	return (A/200) / ((B-128) * 100/128);
 }
 static int pid19_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
-	int B = (packed >> (8 * 2)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
+	int B = (packed >> (8 * 1)) & 0xFF;
 	return (A/200) / ((B-128) * 100/128);
 }
 static int pid1A_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
-	int B = (packed >> (8 * 2)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
+	int B = (packed >> (8 * 1)) & 0xFF;
 	return (A/200) / ((B-128) * 100/128);
 }
 static int pid1B_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
-	int B = (packed >> (8 * 2)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
+	int B = (packed >> (8 * 1)) & 0xFF;
 	return (A/200) / ((B-128) * 100/128);
 }
 static int pid1C_handler(int packed)
@@ -164,8 +158,8 @@ static int pid1E_handler(int packed)
 }
 static int pid1F_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
-	int B = (packed >> (8 * 2)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
+	int B = (packed >> (8 * 1)) & 0xFF;
 	return ((A*256)+B);
 }
 static int pid20_handler(int packed)
@@ -174,212 +168,212 @@ static int pid20_handler(int packed)
 }
 static int pid21_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
-	int B = (packed >> (8 * 2)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
+	int B = (packed >> (8 * 1)) & 0xFF;
 	return ((A*256)+B);
 }
 static int pid22_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
-	int B = (packed >> (8 * 2)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
+	int B = (packed >> (8 * 1)) & 0xFF;
 	return (((A*256)+B) * 0.079);
 }
 static int pid23_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
-	int B = (packed >> (8 * 2)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
+	int B = (packed >> (8 * 1)) & 0xFF;
 	return (((A*256)+B) * 10);
 }
 static int pid24_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
-	int B = (packed >> (8 * 2)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
+	int B = (packed >> (8 * 1)) & 0xFF;
 	return (((A*256)+B)*2/65535);
 }
 static int pid25_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
-	int C = (packed >> (8 * 1)) & 0xFF;
-	int B = (packed >> (8 * 2)) & 0xFF;
-	int D = (packed >> (8 * 0)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
+	int C = (packed >> (8 * 2)) & 0xFF;
+	int B = (packed >> (8 * 1)) & 0xFF;
+	int D = (packed >> (8 * 3)) & 0xFF;
 	return (((A*256)+B)*2/65535) / (((C*256)+D)*8/65535);
 }
 static int pid26_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
-	int C = (packed >> (8 * 1)) & 0xFF;
-	int B = (packed >> (8 * 2)) & 0xFF;
-	int D = (packed >> (8 * 0)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
+	int C = (packed >> (8 * 2)) & 0xFF;
+	int B = (packed >> (8 * 1)) & 0xFF;
+	int D = (packed >> (8 * 3)) & 0xFF;
 	return (((A*256)+B)*2/65535) / (((C*256)+D)*8/65535);
 }
 static int pid27_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
-	int C = (packed >> (8 * 1)) & 0xFF;
-	int B = (packed >> (8 * 2)) & 0xFF;
-	int D = (packed >> (8 * 0)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
+	int C = (packed >> (8 * 2)) & 0xFF;
+	int B = (packed >> (8 * 1)) & 0xFF;
+	int D = (packed >> (8 * 3)) & 0xFF;
 	return (((A*256)+B)*2/65535) / (((C*256)+D)*8/65535);
 }
 static int pid28_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
-	int C = (packed >> (8 * 1)) & 0xFF;
-	int B = (packed >> (8 * 2)) & 0xFF;
-	int D = (packed >> (8 * 0)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
+	int C = (packed >> (8 * 2)) & 0xFF;
+	int B = (packed >> (8 * 1)) & 0xFF;
+	int D = (packed >> (8 * 3)) & 0xFF;
 	return (((A*256)+B)*2/65535) / (((C*256)+D)*8/65535);
 }
 static int pid29_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
-	int C = (packed >> (8 * 1)) & 0xFF;
-	int B = (packed >> (8 * 2)) & 0xFF;
-	int D = (packed >> (8 * 0)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
+	int C = (packed >> (8 * 2)) & 0xFF;
+	int B = (packed >> (8 * 1)) & 0xFF;
+	int D = (packed >> (8 * 3)) & 0xFF;
 	return (((A*256)+B)*2/65535) / (((C*256)+D)*8/65535);
 }
 static int pid2A_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
-	int C = (packed >> (8 * 1)) & 0xFF;
-	int B = (packed >> (8 * 2)) & 0xFF;
-	int D = (packed >> (8 * 0)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
+	int C = (packed >> (8 * 2)) & 0xFF;
+	int B = (packed >> (8 * 1)) & 0xFF;
+	int D = (packed >> (8 * 3)) & 0xFF;
 	return (((A*256)+B)*2/65535) / (((C*256)+D)*8/65535);
 }
 static int pid2B_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
-	int C = (packed >> (8 * 1)) & 0xFF;
-	int B = (packed >> (8 * 2)) & 0xFF;
-	int D = (packed >> (8 * 0)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
+	int C = (packed >> (8 * 2)) & 0xFF;
+	int B = (packed >> (8 * 1)) & 0xFF;
+	int D = (packed >> (8 * 3)) & 0xFF;
 	return (((A*256)+B)*2/65535) / (((C*256)+D)*8/65535);
 }
 static int pid2C_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
 	return (A*100/255);
 }
 static int pid2D_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
 	return ((A-128) * 100/128);
 }
 static int pid2E_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
 	return (A*100/255);
 }
 static int pid2F_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
 	return (A*100/255);
 }
 static int pid30_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
 	return (A);
 }
 static int pid31_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
-	int B = (packed >> (8 * 2)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
+	int B = (packed >> (8 * 1)) & 0xFF;
 	return ((A*256)+B);
 }
 static int pid32_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
-	int B = (packed >> (8 * 2)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
+	int B = (packed >> (8 * 1)) & 0xFF;
 	return (((A*256)+B)/4);
 }
 static int pid33_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
 	return (A);
 }
 static int pid34_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
-	int C = (packed >> (8 * 1)) & 0xFF;
-	int B = (packed >> (8 * 2)) & 0xFF;
-	int D = (packed >> (8 * 0)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
+	int C = (packed >> (8 * 2)) & 0xFF;
+	int B = (packed >> (8 * 1)) & 0xFF;
+	int D = (packed >> (8 * 3)) & 0xFF;
 	return (((A*256)+B)/32768) / (((C*256)+D)/256 - 128);
 }
 static int pid35_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
-	int C = (packed >> (8 * 1)) & 0xFF;
-	int B = (packed >> (8 * 2)) & 0xFF;
-	int D = (packed >> (8 * 0)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
+	int C = (packed >> (8 * 2)) & 0xFF;
+	int B = (packed >> (8 * 1)) & 0xFF;
+	int D = (packed >> (8 * 3)) & 0xFF;
 	return (((A*256)+B)/32768) / (((C*256)+D)/256 - 128);
 }
 static int pid36_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
-	int C = (packed >> (8 * 1)) & 0xFF;
-	int B = (packed >> (8 * 2)) & 0xFF;
-	int D = (packed >> (8 * 0)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
+	int C = (packed >> (8 * 2)) & 0xFF;
+	int B = (packed >> (8 * 1)) & 0xFF;
+	int D = (packed >> (8 * 3)) & 0xFF;
 	return (((A*256)+B)/32768) / (((C*256)+D)/256 - 128);
 }
 static int pid37_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
-	int C = (packed >> (8 * 1)) & 0xFF;
-	int B = (packed >> (8 * 2)) & 0xFF;
-	int D = (packed >> (8 * 0)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
+	int C = (packed >> (8 * 2)) & 0xFF;
+	int B = (packed >> (8 * 1)) & 0xFF;
+	int D = (packed >> (8 * 3)) & 0xFF;
 	return (((A*256)+B)/32768) / (((C*256)+D)/256 - 128);
 }
 static int pid38_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
-	int C = (packed >> (8 * 1)) & 0xFF;
-	int B = (packed >> (8 * 2)) & 0xFF;
-	int D = (packed >> (8 * 0)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
+	int C = (packed >> (8 * 2)) & 0xFF;
+	int B = (packed >> (8 * 1)) & 0xFF;
+	int D = (packed >> (8 * 3)) & 0xFF;
 	return (((A*256)+B)/32768) / (((C*256)+D)/256 - 128);
 }
 static int pid39_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
-	int C = (packed >> (8 * 1)) & 0xFF;
-	int B = (packed >> (8 * 2)) & 0xFF;
-	int D = (packed >> (8 * 0)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
+	int C = (packed >> (8 * 2)) & 0xFF;
+	int B = (packed >> (8 * 1)) & 0xFF;
+	int D = (packed >> (8 * 3)) & 0xFF;
 	return (((A*256)+B)/32768) / (((C*256)+D)/256 - 128);
 }
 static int pid3A_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
-	int C = (packed >> (8 * 1)) & 0xFF;
-	int B = (packed >> (8 * 2)) & 0xFF;
-	int D = (packed >> (8 * 0)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
+	int C = (packed >> (8 * 2)) & 0xFF;
+	int B = (packed >> (8 * 1)) & 0xFF;
+	int D = (packed >> (8 * 3)) & 0xFF;
 	return (((A*256)+B)/32768) / (((C*256)+D)/256 - 128);
 }
 static int pid3B_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
-	int C = (packed >> (8 * 1)) & 0xFF;
-	int B = (packed >> (8 * 2)) & 0xFF;
-	int D = (packed >> (8 * 0)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
+	int C = (packed >> (8 * 2)) & 0xFF;
+	int B = (packed >> (8 * 1)) & 0xFF;
+	int D = (packed >> (8 * 3)) & 0xFF;
 	return (((A*256)+B)/32768) / (((C*256)+D)/256 - 128);
 }
 static int pid3C_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
-	int B = (packed >> (8 * 2)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
+	int B = (packed >> (8 * 1)) & 0xFF;
 	return (((A*256)+B)/10 - 40);
 }
 static int pid3D_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
-	int B = (packed >> (8 * 2)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
+	int B = (packed >> (8 * 1)) & 0xFF;
 	return (((A*256)+B)/10 - 40);
 }
 static int pid3E_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
-	int B = (packed >> (8 * 2)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
+	int B = (packed >> (8 * 1)) & 0xFF;
 	return (((A*256)+B)/10 - 40);
 }
 static int pid3F_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
-	int B = (packed >> (8 * 2)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
+	int B = (packed >> (8 * 1)) & 0xFF;
 	return (((A*256)+B)/10 - 40);
 }
 static int pid40_handler(int packed)
@@ -392,82 +386,82 @@ static int pid41_handler(int packed)
 }
 static int pid42_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
-	int B = (packed >> (8 * 2)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
+	int B = (packed >> (8 * 1)) & 0xFF;
 	return (((A*256)+B)/1000);
 }
 static int pid43_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
-	int B = (packed >> (8 * 2)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
+	int B = (packed >> (8 * 1)) & 0xFF;
 	return (((A*256)+B)*100/255);
 }
 static int pid44_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
-	int B = (packed >> (8 * 2)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
+	int B = (packed >> (8 * 1)) & 0xFF;
 	return (((A*256)+B)/32768);
 }
 static int pid45_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
 	return (A*100/255);
 }
 static int pid46_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
 	return (A-40);
 }
 static int pid47_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
 	return (A*100/255);
 }
 static int pid48_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
 	return (A*100/255);
 }
 static int pid49_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
 	return (A*100/255);
 }
 static int pid4A_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
 	return (A*100/255);
 }
 static int pid4B_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
 	return (A*100/255);
 }
 static int pid4C_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
 	return (A*100/255);
 }
 static int pid4D_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
-	int B = (packed >> (8 * 2)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
+	int B = (packed >> (8 * 1)) & 0xFF;
 	return ((A*256)+B);
 }
 static int pid4E_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
-	int B = (packed >> (8 * 2)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
+	int B = (packed >> (8 * 1)) & 0xFF;
 	return ((A*256)+B);
 }
 static int pid4F_handler(int packed)
 {
-	int D = (packed >> (8 * 0)) & 0xFF;
+	int D = (packed >> (8 * 3)) & 0xFF;
 	return (D*10);
 }
 static int pid50_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
 	return (A*10);
 }
 static int pid51_handler(int packed)
@@ -476,59 +470,59 @@ static int pid51_handler(int packed)
 }
 static int pid52_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
 	return (A*100/255);
 }
 static int pid53_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
-	int B = (packed >> (8 * 2)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
+	int B = (packed >> (8 * 1)) & 0xFF;
 	return (((A*256)+B)/200);
 }
 static int pid54_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
-	int B = (packed >> (8 * 2)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
+	int B = (packed >> (8 * 1)) & 0xFF;
 	return (((A*256)+B)-32767);
 }
 static int pid55_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
-	int B = (packed >> (8 * 2)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
+	int B = (packed >> (8 * 1)) & 0xFF;
 	return ((A-128)*100/128) / ((B-128)*100/128);
 }
 static int pid56_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
-	int B = (packed >> (8 * 2)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
+	int B = (packed >> (8 * 1)) & 0xFF;
 	return ((A-128)*100/128) / ((B-128)*100/128);
 }
 static int pid57_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
-	int B = (packed >> (8 * 2)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
+	int B = (packed >> (8 * 1)) & 0xFF;
 	return ((A-128)*100/128) / ((B-128)*100/128);
 }
 static int pid58_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
-	int B = (packed >> (8 * 2)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
+	int B = (packed >> (8 * 1)) & 0xFF;
 	return ((A-128)*100/128) / ((B-128)*100/128);
 }
 static int pid59_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
-	int B = (packed >> (8 * 2)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
+	int B = (packed >> (8 * 1)) & 0xFF;
 	return (((A*256)+B) * 10);
 }
 static int pid5A_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
 	return (A*100/255);
 }
 static int pid5B_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
 	return (A*100/255);
 }
 static int pid5C_handler(int packed)
@@ -537,15 +531,15 @@ static int pid5C_handler(int packed)
 }
 static int pid5D_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
-	int B = (packed >> (8 * 2)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
+	int B = (packed >> (8 * 1)) & 0xFF;
 	return ((((A*256)+B)-26880)/128);
 }
 static int pid5E_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
-	int B = (packed >> (8 * 2)) & 0xFF;
-	return (((A*256)+B)*0.05);
+	int A = (packed >> (8 * 0)) & 0xFF;
+	int B = (packed >> (8 * 1)) & 0xFF;
+	return (((A*256)+B)/20);
 }
 static int pid5F_handler(int packed)
 {
@@ -557,18 +551,18 @@ static int pid60_handler(int packed)
 }
 static int pid61_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
 	return (A-125);
 }
 static int pid62_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
 	return (A-125);
 }
 static int pid63_handler(int packed)
 {
-	int A = (packed >> (8 * 3)) & 0xFF;
-	int B = (packed >> (8 * 2)) & 0xFF;
+	int A = (packed >> (8 * 0)) & 0xFF;
+	int B = (packed >> (8 * 1)) & 0xFF;
 	return (A*256+B);
 }
 static int pid64_handler(int packed)
@@ -812,5 +806,5 @@ const pid_handler pid_formulas[N_PID] = {
         pid7C_handler,
         pid7D_handler,
         pid7E_handler,
-        pid7F_handler,
+        pid7F_handler
 };
