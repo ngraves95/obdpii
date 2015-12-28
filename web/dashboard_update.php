@@ -7,12 +7,36 @@ if ($db->connect_errno) {
     exit();
 }
 
-// How to get target pids? Maybe send via json?
-//$target_pids = array(17, 12, 13, 15); // 0x17 is Throttle Position.
 $target_pids = array();
 
 if(isset($_GET["pid"]) && !empty($_GET["pid"])) {
     $target_pids = $_GET["pid"];
+} else {
+    echo "{}";
+    exit();
+}
+
+// Validate pids. If any are not numeric, remove them.
+for ($i = 0; $i < count($target_pids); $i++) {
+    if (!is_numeric($target_pids[$i])) {
+        unset($target_pids[$i]);
+    }
+}
+
+$target_pids = array_values($target_pids);
+
+// Get PID data from OBD-II. Data is passed via stdout.
+$obdii_pid_param_string = join(" ", $target_pids);
+$obdii_reader = "./main";
+$obdii_read_command = $obdii_reader." ".$obdii_pid_param_string;
+// Get response
+$obdii_raw_response = exec($obdii_read_command);
+// Decode response
+$obdii_raw = json_decode(utf8_encode($obdii_raw_response));
+
+$obdii_data = array();
+foreach ($obdii_raw as $key => $value) {
+    $obdii_data[$key] = $value;
 }
 
 // Get names and units from pid_metadata table.
@@ -34,7 +58,7 @@ if (!$metadata_result) {
 
 while ($metadata_row = $metadata_result->fetch_assoc()) {
     $output[$metadata_row["name"]] = array(
-        "pid_value" => 0,//$obdii_row[$metadata_row["pid"]];
+        "pid_value" => $obdii_data[$metadata_row["pid"]],
         "pid_units" => $metadata_row["units"]
     );
 }

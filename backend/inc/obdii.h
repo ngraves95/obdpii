@@ -9,7 +9,12 @@ typedef enum {
 struct pid_entry {
 	char pid;
 	char response_len;
-	char * msg;
+	char * msg; /* <REMOVE ME> */
+};
+
+struct pid_response {
+	char pid;
+	int value;
 };
 
 #define N_PID 0x80
@@ -20,9 +25,18 @@ struct pid_entry {
 extern const struct pid_entry pid_data[N_PID];
 
 /*
- * Use to designate out-parameters.
+ * Contains all the formulas used to scale and format the
+ * raw results from a request into a meaningful value.
+ * The function at slot N corresponds to pid N.
  */
-#define OUT
+typedef int (*pid_handler)(int);
+extern const pid_handler pid_formulas[N_PID];
 
+/*
+ * Only 1 OBD-II device may be open at a time,
+ * as a car only has 1 OBD-II port.
+ */
+obdii_result_t obdii_open(char * location);
+obdii_result_t obdii_close(void);
 
 #endif

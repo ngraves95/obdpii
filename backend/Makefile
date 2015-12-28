@@ -1,4 +1,3 @@
-
 CC=gcc
 CFLAGS=-I$(IDIR) -Wall -Werror
 
@@ -23,11 +22,16 @@ $(MAIN): $(OBJ)
 
 .PHONY: clean echo-src echo-obj run
 
+debug: $(MAIN)
+
+debug: CFLAGS += -DDEBUG=0
+
+
 run : $(MAIN)
 	./$(MAIN)
 
 clean:
-	rm -f $(ODIR)/*.o *~ core $(INCDIR)/*~
+	rm -f $(ODIR)/*.o *~ core $(IDIR)/*~ $(SRCDIR)/*~
 
 echo-src:
 	@echo $(SRCS)

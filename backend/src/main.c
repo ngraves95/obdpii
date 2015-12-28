@@ -1,15 +1,24 @@
 #include <stdio.h>
-#include "obdii.h"
+#include <stdlib.h>
 
-int main(void)
+#include "obdii.h"
+#include "obdii_simple.h"
+
+int main(int argc, char ** argv)
 {
+	char pids[argc - 1];
 	int i;
-	for (i = 0; i < N_PID; i++) {
-		printf("%u %u %s\n",
-		       pid_data[i].pid,
-		       pid_data[i].response_len,
-		       pid_data[i].msg);
+
+	if (argc <= 1) {
+		printf("{}\n");
+		return 0;
 	}
 
+	for (i = 1; i < argc; i++) {
+		pids[i - 1] = (char)(atoi(argv[i]) & 0xFF);
+	}
+
+	obdii_simple_get_response(pids, argc - 1);
+	obdii_close();
 	return 0;
 }
