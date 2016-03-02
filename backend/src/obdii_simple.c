@@ -90,7 +90,7 @@ static int configure_device(int fd, int baud, int nbits,
 	tty.c_cflag &= ~(CSTOPB);
 	tty.c_cflag |= stop_bits;
 
-	tty.c_cflag &= ~(CRTSCTS); /* This was from stack overflow */
+	/* tty.c_cflag &= ~(CRTSCTS); /\* This was from stack overflow *\/ */
 
 	if (tcsetattr(fd, TCSANOW, &tty) != 0) {
 		DEBUG_PRINT("Failed to set attr (tcsetattr)");
@@ -168,7 +168,10 @@ obdii_result_t obdii_close(void)
 }
 
 /*
- * Mock requester for now.
+ * Writes a request to the OBDII device.
+ * @param mode: the mode of the device
+ * @param pid: the pid to request
+ * @returns whether or not the result was successful.
  */
 obdii_result_t obdii_request(char mode, char pid)
 {
@@ -207,7 +210,14 @@ obdii_result_t obdii_request(char mode, char pid)
 }
 
 /*
- * Mock reader for now.
+ * This function reads data from the obdii reader into the buffer pointed to
+ * by out_buffer.
+ * @param out_buffer: the buffer where the raw read result is store
+ * @param bytes_read: in/out param. As input, it indicates the maximum number of
+ *                    of bytes to read. As an out-param, it indicates the number
+ *                    of bytes that were actually read.
+ *
+ * @returns a result, either success or failure.
  */
 obdii_result_t obdii_read(char * out_buffer, int * bytes_read)
 {
@@ -236,11 +246,19 @@ obdii_result_t obdii_read(char * out_buffer, int * bytes_read)
 	return OBDII_SUCCESS;
 }
 
+/*
+ * Helper function to determine if a character is the start of a numeric literal.
+ * @param c a character
+ * @returns boolean if the character could start a numeric literal.
+ */
 static int is_number_start(char c)
 {
 	return (c >= '0' && c <= '9') || (c >= 'A' && c <= 'F');
 }
 
+/*
+ * Converts a series of returned strings into pid_response structs.
+ */
 obdii_result_t obdii_parse(struct pid_response * out, int * n_out,
 			   char * src, int src_len)
 {
